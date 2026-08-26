@@ -1,7 +1,7 @@
 @media screen and (min-width:  1024px){
     #navigation{
         width: 92dvw;
-        margin: 1.5rem 2rem 0 2rem;
+        margin-top: 1rem;
         flex-direction: space-evenly;
         padding: 0 1.5rem;
         border-radius: 50px;
@@ -13,7 +13,7 @@
         flex-direction: row;
         gap: 3rem;
         width: fit-content;
-        margin-right: -1.4rem;
+        /* margin-right: -1.4rem; */
         margin-bottom: 0;
 
     }
@@ -29,6 +29,8 @@
 
     #home{
         flex-direction: row-reverse;
+        margin: 0;
+
     }
 
     .home-content{
@@ -56,7 +58,7 @@
 
     .home-buttons {
         flex-direction: row;
-        height: 7.5vh;
+        justify-content: start;
         a{
         width: fit-content;
         }
@@ -70,15 +72,14 @@
         min-width: 20dvw;
         width: 40dvw;
         max-width: 50dvw;
-        margin-right: 5dvw;
     }
 
 
-    .project-card{
+    /* .project-card{
         margin: 0;
         min-width: 20dvw;
         max-width: 250px;
-    }
+    } */
 }
 
 /* @media screen and (max-width: 950px) {

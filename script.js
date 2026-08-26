@@ -16,7 +16,7 @@ const projects = [
     image: "assets/images/portfolio.png",
     tech: ["HTML", "CSS", "JavaScript"],
     desc: "A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills, projects, and professional journey.",
-    demoLink: "https://mccrbico.github.io/",
+    demoLink: "https://mccbico.github.io/",
     githubLink: "https://github.com/mccrbico/mccrbico.github.io"
   }
   // Add more projects here

@@ -20,6 +20,7 @@ body {
   color: white;
   font-family: "Poppins", sans-serif;
   padding: 0 1rem;
+  overflow-x: hidden;
 }
 
 html {
@@ -274,14 +275,16 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5dvh;
-  padding: 10vh 1dvw;
+  margin-bottom: 5dvh;
+  padding: 0 1dvw;
+
 }
 #about,
 #project,
 #skills,
 #contact {
   min-height: 95dvh;
+  
 }
 
 section h2 {
@@ -299,6 +302,8 @@ section h2 {
   flex-wrap: wrap;
   min-height: 80dvh;
   scroll-margin-top: 80px;
+  margin-top: 5dvh;
+  padding: 10vh 1dvw;
   
 }
 
@@ -399,15 +404,17 @@ section h2 {
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 0%,
-    black 0%,
+    black 80%,
     transparent 100%
   );
 
-  mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
 }
 
 /* Blue Ring */
 .circle {
+  border-color: #5FA8D3;
+  box-shadow: 0 0 15px rgba(95, 168, 211, 0.45);
   position: absolute;
   width: 75%;
   height: auto;
@@ -415,16 +422,9 @@ section h2 {
   border: 3px solid rgba(92, 161, 202, 0.65);
   border-radius: 50%;
   margin-bottom: 5%;
-  overflow: visible;
-
-  /* box-shadow:
-        0 0 15px rgba(0,136,255,.2),
-        inset 0 0 20px rgba(0,136,255,.2); */
-
-  clip-path: inset(0 0 20% 0);
+  clip-path: inset(-5% -5% 13% -5%);
 }
 
-/* Gradient border using masking */
 .circle::before {
   content: "";
   margin: -0.9%;
@@ -436,8 +436,6 @@ section h2 {
     rgba(92, 161, 202, 0.65) 0deg 60deg,
     rgba(52, 52, 52, 0.5) 120deg 90deg
   );
-  
-  
 
   -webkit-mask: radial-gradient(
     farthest-side,
@@ -461,14 +459,13 @@ section h2 {
   width: 120%;
   height: 120%;
   aspect-ratio: 1 / 1;
+  clip-path: inset(-5% -5% 35% -5%);
+  top: 0.7%;
   background: radial-gradient(
     circle,
     rgba(59, 120, 154, 1) 0%,
     transparent 50%
   );
-
-  clip-path: inset(0 0 40% 0);
-  top: 0.7%;
 }
 
 /* Dotted decoration */
@@ -478,14 +475,12 @@ section h2 {
   top: 5%;
   width: 30%;
   height: 30%;
-
+  background-size: 12px 12px;
+  opacity: 0.6;
   background-image: radial-gradient(
     rgba(73, 145, 255, 0.7) 1.3px,
     transparent 1.3px
   );
-
-  background-size: 12px 12px;
-  opacity: 0.6;
 }
 
 .dots:nth-of-type(2) {
@@ -511,10 +506,12 @@ section h2 {
 
 #project-grid {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  margin: 0 1rem;
 }
 
 .project-card {
@@ -525,9 +522,10 @@ section h2 {
   background-color: #0a1224;
   border-radius: 30px;
   box-shadow: 0 0 20px rgba(122, 166, 255, 0.6);
-  min-width: 60vw;
+  /* min-width: 150px; */
+  max-width: 375px;
+  min-height: 65dvh;
   padding: 1.5rem;
-  margin: 0 2rem;
   text-align: left;
   transition:
     transform 0.3s ease,
@@ -571,7 +569,7 @@ section h2 {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  width: 80%;
+  width: 100%;
   bottom: 0;
   margin-top: auto;
 }
@@ -625,72 +623,4 @@ footer p {
 
 footer img {
   height: 5vh;
-}
-
-
-.theme-switch {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 140px;
-  height: 40px;
-  display: inline-block;
-}
-
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ddd;
-  border-radius: 40px;
-  transition: background-color 0.4s;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding: 0 1rem;
-}
-
-.slider.dark{
-  justify-content: left;
-}
-
-.mode-text {
-  justify-content: end;
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.slider:before {
-  content: "☀️"; /* default icon inside knob */
-  position: absolute;
-  height: 32px;
-  width: 32px;
-  left: 0;
-  bottom: 4px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  transition: transform 0.4s, content 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #4a90e2;
-}
-
-input:checked + .slider:before {
-  transform: translateX(100px);
-  content: "🌙"; /* moon icon when dark mode */
-}
-
-input:checked + .slider .mode-text {
-  color: #fff;
 }
