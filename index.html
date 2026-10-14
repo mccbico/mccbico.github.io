@@ -6,7 +6,8 @@
     <title>Ma. Chey Cheneb Bico | Web Developer Portfolio</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="./mediaqueries.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
   </head>
   <body>
     <header id="navigation">
@@ -23,8 +24,8 @@
         <nav class="nav-menu">
           <a class="nav-link" href="#home">Home</a>
           <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#projects" >Projects</a>
           <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects" >Projects</a>
           <a href="#contact" class="nav-links btn primary">Let's Talk <i data-lucide="arrow-right"></i></a>
         </nav>
 
@@ -71,18 +72,11 @@
         <div class="about-content">
           <h2>About Me</h2>
           <p>
-            I am a web developer with experience in HTML, CSS, JavaScript, and
-            React. I enjoy building responsive and user-friendly websites that
-            provide a great user experience.
+            I'm a passionate Web Developer focused on building responsive, accessible, and user-friendly web applications.
+            I enjoy transforming ideas into interactive digital experiences using modern technologies such as HTML, CSS, JavaScript, React, and Node.js. 
+            I'm continuously learning and exploring new tools to create efficient and impactful solutions.
           </p>
         </div>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <p class="subtitle">Some of the works I've done recently.</p>
-
-        <div id="project-grid"></div>
       </section>
 
       <section id="skills">
@@ -97,6 +91,24 @@
           </ul>
         </div>
       </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <p class="subtitle">Some of the works I've done recently.</p>
+
+        <div class="swiper project-container">
+          <div class="project-wrapper">
+            <div id="project-grid" class="swiper-wrapper"></div>
+          </div>          
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      
 
       <section id="contact">
         <!-- <div class="contact-content">
@@ -123,7 +135,7 @@
       <div class="logo">
           <a href="#home"><img src="assets/images/mccb_logo.svg" alt="Ma. Chey Cheneb Bico portfolio logo in the footer section, featuring stylized initials MCCB in blue and light blue, returns to home section when clicked"></a>
         </div>
-      <p>Copyright &copy; 2026 MCCB. All rights reserved.</p>
+      <p>Copyright &copy; <span id="year"></span> MCCB. All rights reserved.</p>
     </footer>
 
 
@@ -133,6 +145,8 @@
 
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    
   </body>
 </html>

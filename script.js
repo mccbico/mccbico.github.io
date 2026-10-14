@@ -9,7 +9,7 @@ const projects = [
     tech: ["Next.js", "Node.js", "OpenAI API"],
     desc: "A web app that combines sentiment analysis with a conversational chatbot powered by ChatGPT. Built to demonstrate AI integration, natural language processing, and responsive UI design.",
     demoLink: "https://damakitawithdaki.netlify.app",
-    githubLink: "https://github.com/mccrbico/DamaKita"
+    githubLink: "https://github.com/mccbico/DamaKita"
   },
   {
     title: "Portfolio Website",
@@ -17,30 +17,62 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     desc: "A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills, projects, and professional journey.",
     demoLink: "https://mccbico.github.io/",
-    githubLink: "https://github.com/mccrbico/mccrbico.github.io"
-  }
+    githubLink: "https://github.com/mccbico/mccrbico.github.io"
+  },
+   {
+    title: "DamaKita - Sentiment Analysis",
+    image: "assets/images/damakita.png",
+    tech: ["Next.js", "Node.js", "OpenAI API"],
+    desc: "A web app that combines sentiment analysis with a conversational chatbot powered by ChatGPT. Built to demonstrate AI integration, natural language processing, and responsive UI design.",
+    demoLink: "https://damakitawithdaki.netlify.app",
+    githubLink: "https://github.com/mccbico/DamaKita"
+  },
+  {
+    title: "Portfolio Website",
+    image: "assets/images/portfolio.png",
+    tech: ["HTML", "CSS", "JavaScript"],
+    desc: "A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills, projects, and professional journey.",
+    demoLink: "https://mccbico.github.io/",
+    githubLink: "https://github.com/mccbico/mccrbico.github.io"
+  },
+   {
+    title: "DamaKita - Sentiment Analysis",
+    image: "assets/images/damakita.png",
+    tech: ["Next.js", "Node.js", "OpenAI API"],
+    desc: "A web app that combines sentiment analysis with a conversational chatbot powered by ChatGPT. Built to demonstrate AI integration, natural language processing, and responsive UI design.",
+    demoLink: "https://damakitawithdaki.netlify.app",
+    githubLink: "https://github.com/mccbico/DamaKita"
+  },
+  
   // Add more projects here
 ];
 
 const container = document.getElementById("project-grid");
 
 projects.forEach(project => {
+  const slide = document.createElement("div");
+  slide.className = "swiper-slide";
+
   const card = document.createElement("div");
   card.className = "project-card";
 
   card.innerHTML = `
-    <img src="${project.image}" alt="${project.title} preview" />
-    <h3>${project.title}</h3>
-    <p class="tech">Developed with ${project.tech.map(t => `<span>${t}</span>`).join(", ")}</p>
-    <p class="desc">${project.desc}</p>
+    <div class="project-content">
+      <img src="${project.image}" alt="${project.title} preview" />
+      <h3>${project.title}</h3>
+      <p class="tech">Developed with ${project.tech.map(t => `<span>${t}</span>`).join(", ")}</p>
+      <p class="desc">${project.desc}</p>
+    </div>
     <div class="project-buttons">
       <a href="${project.demoLink}" target="_blank" class="btn primary">Demo <i class="fa-solid fa-arrow-right"></i></a>
       <a href="${project.githubLink}" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
     </div>
   `;
-
-  container.appendChild(card);
+  slide.appendChild(card);      // card goes inside slide
+  container.appendChild(slide); // slide goes inside swiper-wrapper
 });
+
+
 
 
 // ELEMENTS
@@ -113,16 +145,34 @@ window.addEventListener("scroll", () => {
 
 updateActiveSection();
 
-const toggle = document.getElementById('theme-toggle');
-const modeText = document.querySelector('.mode-text');
-const slider = document.querySelector('.slider');
 
-toggle.addEventListener('change', () => {
-  const isDark = toggle.checked;
-  document.body.classList.toggle('dark-mode', isDark);
-  slider.classList.toggle('dark');
-  modeText.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+new Swiper('.project-wrapper', {
+  centeredSlides: true,
+  spaceBetween: 20,
+  grabCursor: true,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  }
 });
 
+document.getElementById('year').textContent = new Date().getFullYear();
 
 

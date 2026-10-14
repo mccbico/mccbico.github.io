@@ -4,7 +4,7 @@
 :root {
   --primary: #5ca1ca;
   --secondary: #3b789a;
-  --background: #000613;
+  --background: #000613; 
   --surface: #0a1224;
 }
 
@@ -280,7 +280,7 @@ section {
 
 }
 #about,
-#project,
+#projects,
 #skills,
 #contact {
   min-height: 95dvh;
@@ -345,7 +345,7 @@ section h2 {
 .home-buttons {
   display: flex;
   justify-content: center;
-  flex-direction: start;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
@@ -494,6 +494,11 @@ section h2 {
   text-align: center;
 }
 
+#about p{
+  max-width: 75dvw;
+  margin: 0 auto;
+}
+
 /* Projects Section */
 #projects {
   flex-direction: column;
@@ -501,49 +506,78 @@ section h2 {
 
 .subtitle {
   color: #b0b0b0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
+.project-container {
+  /* margin: 0 auto; */
+  width: 95vw;
+}
+
+.project-wrapper {
+  justify-self: center;
+  width: 92%;
+  overflow: hidden;
+}
+
+.swiper-button-prev,.swiper-button-next {
+  color: var(--primary) !important;
+  /* z-index: 10000 !important; */
+}
+
+.swiper-pagination-bullet-active, .swiper-pagination-bullet {
+  background: var(--primary) !important;
+}
+/* 
+.swiper-pagination-bullet {
+  opacity: var(--primary, 0.9) !important;
+} */
+
+
 #project-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem 1rem;
+  /* justify-self: center; */
 }
 
 .project-card {
+  -webkit-user-select: none;
+  user-select: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   background-color: #0a1224;
   border-radius: 30px;
   box-shadow: 0 0 20px rgba(122, 166, 255, 0.6);
-  /* min-width: 150px; */
-  max-width: 375px;
-  min-height: 65dvh;
+  min-height: 450px;
+  max-width: 350px;
+  height: 100%;
   padding: 1.5rem;
   text-align: left;
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease; 
 }
+
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 25px rgba(122, 166, 255, 0.8);
 }
 
-.project-card img {
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-.project-card h3 {
+.project-content h3 {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
@@ -563,6 +597,7 @@ section h2 {
   color: #cfcfcf;
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .project-buttons {
@@ -570,7 +605,6 @@ section h2 {
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  bottom: 0;
   margin-top: auto;
 }
 
