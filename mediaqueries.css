@@ -74,6 +74,10 @@
         max-width: 50dvw;
     }
 
+    #project-grid {
+        justify-content: center;
+    }
+
 
     /* .project-card{
         margin: 0;

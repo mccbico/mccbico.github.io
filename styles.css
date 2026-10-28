@@ -276,7 +276,6 @@ section {
   justify-content: center;
   align-items: center;
   margin-bottom: 5dvh;
-  padding: 0 1dvw;
 
 }
 #about,
@@ -511,12 +510,18 @@ section h2 {
 
 .project-container {
   /* margin: 0 auto; */
-  width: 95vw;
+  /* display: flex !important; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  
+  width: 90dvw;
 }
+
+
 
 .project-wrapper {
   justify-self: center;
-  width: 92%;
+  width: 91%;
   overflow: hidden;
 }
 
@@ -537,6 +542,7 @@ section h2 {
 #project-grid {
   margin-bottom: 1rem;
   padding: 2rem 1rem;
+  /* justify-content: center; */
   /* justify-self: center; */
 }
 
@@ -550,7 +556,8 @@ section h2 {
   border-radius: 30px;
   box-shadow: 0 0 20px rgba(122, 166, 255, 0.6);
   min-height: 450px;
-  max-width: 350px;
+  max-width: 325px;
+  min-width: 300px;
   height: 100%;
   padding: 1.5rem;
   text-align: left;

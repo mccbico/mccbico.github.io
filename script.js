@@ -19,30 +19,7 @@ const projects = [
     demoLink: "https://mccbico.github.io/",
     githubLink: "https://github.com/mccbico/mccrbico.github.io"
   },
-   {
-    title: "DamaKita - Sentiment Analysis",
-    image: "assets/images/damakita.png",
-    tech: ["Next.js", "Node.js", "OpenAI API"],
-    desc: "A web app that combines sentiment analysis with a conversational chatbot powered by ChatGPT. Built to demonstrate AI integration, natural language processing, and responsive UI design.",
-    demoLink: "https://damakitawithdaki.netlify.app",
-    githubLink: "https://github.com/mccbico/DamaKita"
-  },
-  {
-    title: "Portfolio Website",
-    image: "assets/images/portfolio.png",
-    tech: ["HTML", "CSS", "JavaScript"],
-    desc: "A responsive personal portfolio built with HTML, CSS, and JavaScript to showcase my skills, projects, and professional journey.",
-    demoLink: "https://mccbico.github.io/",
-    githubLink: "https://github.com/mccbico/mccrbico.github.io"
-  },
-   {
-    title: "DamaKita - Sentiment Analysis",
-    image: "assets/images/damakita.png",
-    tech: ["Next.js", "Node.js", "OpenAI API"],
-    desc: "A web app that combines sentiment analysis with a conversational chatbot powered by ChatGPT. Built to demonstrate AI integration, natural language processing, and responsive UI design.",
-    demoLink: "https://damakitawithdaki.netlify.app",
-    githubLink: "https://github.com/mccbico/DamaKita"
-  },
+  
   
   // Add more projects here
 ];
@@ -147,8 +124,9 @@ updateActiveSection();
 
 
 new Swiper('.project-wrapper', {
-  centeredSlides: true,
-  spaceBetween: 20,
+  // centeredSlides: false,
+  // initialSlide: 3,
+  spaceBetween: 15,
   grabCursor: true,
   loop: true,
   pagination: {
@@ -164,10 +142,10 @@ new Swiper('.project-wrapper', {
     0: {
       slidesPerView: 1,
     },
-    768: {
+    1000: {
       slidesPerView: 2,
     },
-    1024: {
+    1500: {
       slidesPerView: 3,
     },
   }
